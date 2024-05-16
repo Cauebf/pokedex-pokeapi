@@ -1,0 +1,3 @@
+# Overview 🌐
+
+This project, still under development, consists of a Pokedex, a web application for viewing information about Pokémon. Using Vite, React, Styled Components, Context, React Router the Pokedex allows users to view a list of Pokémon, with detailed information about each one. The application consumes an external API to fetch Pokémon details, including abilities, height, weight, types, and sprites. Additionally, there is a "Load More" button to load more Pokémon as the user scrolls the page. The project also includes a theme toggle button, allowing users to switch between light and dark themes.
