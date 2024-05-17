@@ -73,7 +73,7 @@ const TypeContainer = styled.ul`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: #FF6347;
+    background-color: #1E90FF;
     width: 100%;
     padding: 20px 50px 10px 50px;
     overflow: hidden;
@@ -90,7 +90,7 @@ const Button = styled.button`
     border-radius: 5px;
     font-size: 14px;
     margin: 10px 20px;
-    border: none;
+    border: 2px solid #1C86EE;
     color: ${({ color }) => color ? "#ffff" : "#000000"};
     background-color: ${({ color }) => color};    
     cursor: pointer;
@@ -112,16 +112,20 @@ const Button = styled.button`
 `
 
 const FilterTypeSpan = styled.div`
-    background-color: #FF6347;
+    background-color: #1E90FF;
     width: 500px;
     height: 20px;
     display: flex;
     justify-content: center;
-    border-radius: 0 0 20px 20px;
     cursor: pointer;
+    clip-path: polygon(0 -10%, 100% -10%, 85% 100%, 15% 100%);
 
     @media (max-width: 1000px) {
         width: 60%;
+    }
+
+    @media (max-width: 430px) {
+        height: 15px;
     }
 `
 

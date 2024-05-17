@@ -24,7 +24,7 @@ const PokemonList = ({ pokemons, loadMorePokemons }) => {
                         filteredPokemons.map((pokemon, index) => (
                             <Link to={`/pokemon/${pokemon.id}`} state={{ pokemon: pokemon }} key={index}>
                                 <PokemonCard backgroundcolor={theme.background}>
-                                    <PokemonSprite src={pokemon.sprites.front_default} alt={pokemon.name} />
+                                    <PokemonSprite src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
 
                                     <PokemonDetailsContainer>
                                         <PokemonID id={theme.id}>#{pokemon.id.toString().padStart(4, '0')}</PokemonID>

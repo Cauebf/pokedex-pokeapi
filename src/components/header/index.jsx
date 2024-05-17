@@ -14,12 +14,13 @@ const Header = () => {
 }
 
 const PokemonHeader = styled.header`    
-    background-color: #FF6347;
+    background-color: #313131;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100px;
+    border-bottom: 3px solid #1E90FF;
 `
 
 const Img = styled.img`

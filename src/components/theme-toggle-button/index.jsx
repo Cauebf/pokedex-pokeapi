@@ -27,8 +27,8 @@ const ThemeTogglerButton = () => {
 
 const ToggleContainer = styled.div`
     position: absolute;
-    top: 2em;
-    right: 2em;
+    top: 2.5em;
+    right: 2.5em;
 `;
 
 const Toggle = styled.input`

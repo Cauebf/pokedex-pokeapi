@@ -19,6 +19,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     font-family: "Roboto", sans-serif;
-    background-image: 
+    background: url('/images/body-bg.png') repeat-y center center / cover fixed;
   }
 `

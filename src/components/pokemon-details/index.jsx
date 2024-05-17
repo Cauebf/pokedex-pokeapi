@@ -70,7 +70,7 @@ const PokemonDetails = () => {
                         <PokemonID id={theme.id}>#{pokemon.id.toString().padStart(4, '0')}</PokemonID>
                     </NameContainer>
 
-                    <PokemonSprite src={pokemon.sprites.versions['generation-v']['black-white'].animated.front_default} alt={pokemon.name} />
+                    <PokemonSprite src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
                 </ContainerLeft>
 
                 <ContainerRight>
@@ -253,10 +253,11 @@ const MovesUl = styled.ul`
 `
 
 const MovesLi = styled.li`
-    margin: 10px;
+    margin: 9px;
     background-color: ${({ color }) => color};
     padding: 4px 20px;
     border-radius: 3px;
+    border: 1.5px solid #1C86EE;
 `
 
 const MoveName = styled.p`
