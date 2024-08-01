@@ -1,17 +1,20 @@
+import { StyleSheetManager } from "styled-components"
 import { ThemeProvider } from "./contexts/theme-context"
 import { TypeProvider } from "./contexts/type-context"
-import AppRoutes from "./pages/routes"
+import { AppRoutes } from "./routes/index"
 
 function App() {
   return (
     <>
-      <ThemeProvider>
-        <TypeProvider>
-          <AppRoutes />
-        </TypeProvider>
-      </ThemeProvider>
+      <StyleSheetManager shouldForwardProp={() => true}>
+        <ThemeProvider>
+          <TypeProvider>
+            <AppRoutes />          
+          </TypeProvider>
+        </ThemeProvider>
+      </StyleSheetManager>
     </>
   )
 }
 
-export default App
+export default App  

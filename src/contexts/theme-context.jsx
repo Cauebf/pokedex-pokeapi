@@ -2,14 +2,20 @@ import { createContext, useState } from "react";
 
 export const themes = {
     light: {
-        name: '#242424',
+        color: '#0f0f0f',
         background: '#ffffff',
-        id: '#919191',
+        description: '#8F9396',
+        buttonColor: '#ffffff',
+        buttonBackground: '#242424',
+        loadingPokeball: 'invert(1) grayscale(1)'
     },
     dark: {
-        name: '#eeeeee',
+        color: '#eeeeee',
         background: '#242424',
-        id: '#cccccc',
+        description: '#B0B0B0',
+        buttonColor: '#242424',
+        buttonBackground: '#ffffff',
+        loadingPokeball: 'none'
     }
 }
 

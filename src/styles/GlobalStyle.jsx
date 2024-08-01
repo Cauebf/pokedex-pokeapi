@@ -4,7 +4,9 @@ export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
+    outline: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
   }
 
   ul, li {
@@ -19,6 +21,5 @@ export const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     font-family: "Roboto", sans-serif;
-    background: url('/images/body-bg.png') repeat-y center center / cover fixed;
   }
 `
