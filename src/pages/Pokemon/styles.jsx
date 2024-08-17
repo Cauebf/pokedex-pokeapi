@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 import { FaChevronLeft } from 'react-icons/fa';
 
 export const ArrowLeftIcon = styled(FaChevronLeft)`
@@ -16,18 +16,18 @@ export const ArrowLeftIcon = styled(FaChevronLeft)`
         height: 40px;
         left: 10px;
     }
-`
+`;
 
 export const Container = styled.div`
     height: 100vh;
-    background-color: ${({ backgroundcolor }) => backgroundcolor}; 
+    background-color: ${({ backgroundcolor }) => backgroundcolor};
     display: flex;
     flex-direction: column;
     align-items: center;
-`
+`;
 
 export const PokeInfoContainer = styled.div`
-    background-color: ${({ backgroundcolor }) => backgroundcolor}; 
+    background-color: ${({ backgroundcolor }) => backgroundcolor};
     height: 100%;
     width: 100%;
     position: relative;
@@ -50,14 +50,14 @@ export const PokeInfoContainer = styled.div`
     @media (max-width: 525px) {
         padding: 50px 15px 20px 15px;
     }
-`
+`;
 
 export const PokemonSprite = styled.img`
     height: 300px;
     width: 310px;
     position: absolute;
     top: -210px;
-    image-rendering: ${({ rendering }) => rendering}; 
+    image-rendering: ${({ rendering }) => rendering};
 
     @media (max-width: 1160px) {
         height: 250px;
@@ -70,7 +70,7 @@ export const PokemonSprite = styled.img`
         width: 160px;
         top: -105px;
     }
-`
+`;
 
 export const PokemonID = styled.span`
     color: ${({ color }) => color};
@@ -86,7 +86,7 @@ export const PokemonID = styled.span`
         font-size: 14px;
         margin-top: 7px;
     }
-`
+`;
 
 export const PokemonName = styled.h2`
     color: ${({ color }) => color};
@@ -101,17 +101,17 @@ export const PokemonName = styled.h2`
     @media (max-width: 800px) {
         font-size: 25px;
     }
-`
+`;
 
 export const TypeUl = styled.ul`
     margin-top: 20px;
     width: 100%;
     display: flex;
-    justify-content: center;    
-`
+    justify-content: center;
+`;
 
 export const TypeLi = styled.li`
-    background-color: ${({ type }) => type.color}; 
+    background-color: ${({ type }) => type.color};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,7 +131,7 @@ export const TypeLi = styled.li`
         margin-left: 5px;
         text-transform: capitalize;
     }
-`
+`;
 
 export const PokemonEntryTitle = styled.h3`
     margin-top: 35px;
@@ -146,7 +146,7 @@ export const PokemonEntryTitle = styled.h3`
         font-size: 17px;
         margin-top: 23px;
     }
-`
+`;
 
 export const PokemonEntryText = styled.p`
     color: ${({ color }) => color};
@@ -157,13 +157,13 @@ export const PokemonEntryText = styled.p`
     @media (max-width: 800px) {
         font-size: 15px;
     }
-`
+`;
 
 export const DataContainer = styled.div`
     display: grid;
-    grid: 
-        "pokedex-data stats moves"
-        "abilities stats moves";
+    grid:
+        'pokedex-data stats moves'
+        'abilities stats moves';
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 15px 0;
@@ -172,17 +172,17 @@ export const DataContainer = styled.div`
     margin-top: 30px;
 
     @media (max-width: 1160px) {
-        grid: 
-            "pokedex-data abilities"
-            "stats moves";
+        grid:
+            'pokedex-data abilities'
+            'stats moves';
         grid-template-columns: repeat(2, 1fr);
     }
 
     @media (max-width: 800px) {
-        grid: 
-            "pokedex-data abilities"
-            "stats stats"
-            "moves moves";
+        grid:
+            'pokedex-data abilities'
+            'stats stats'
+            'moves moves';
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto-fill repeat(2, 1fr);
         gap: 20px 5px;
@@ -194,7 +194,7 @@ export const DataContainer = styled.div`
         flex-direction: column;
         align-items: center;
     }
-`
+`;
 
 export const DataTitle = styled.h3`
     color: ${({ color }) => color};
@@ -203,15 +203,15 @@ export const DataTitle = styled.h3`
     @media (max-width: 1160px) {
         font-size: 20px;
     }
-    
+
     @media (max-width: 800px) {
         font-size: 17px;
     }
-`
+`;
 
 export const DataUl = styled.ul`
     padding: 0 40px;
-    margin-top: 15px;    
+    margin-top: 15px;
     width: 100%;
 
     @media (max-width: 800px) {
@@ -228,7 +228,7 @@ export const DataUl = styled.ul`
             margin-top: 7px;
         }
     }
-`
+`;
 
 export const DataSubTitle = styled.h4`
     color: ${({ color }) => color};
@@ -238,35 +238,35 @@ export const DataSubTitle = styled.h4`
     @media (max-width: 1160px) {
         font-size: 16px;
     }
-    
+
     @media (max-width: 800px) {
         font-size: 14px;
     }
-`
+`;
 
 export const DataDescription = styled.span`
     color: ${({ color }) => color};
     font-weight: 500;
 
     &::first-letter {
-        text-transform: uppercase
+        text-transform: uppercase;
     }
 
     @media (max-width: 800px) {
         font-size: 13.5px;
     }
-`
+`;
 
 export const HiddenAbility = styled.span`
     color: ${({ color }) => color};
     font-size: 16px;
     font-weight: 500;
     text-transform: lowercase;
-    
+
     @media (max-width: 800px) {
         font-size: 11px;
     }
-`
+`;
 
 export const StatsUl = styled.ul`
     width: 100%;
@@ -289,7 +289,7 @@ export const StatsUl = styled.ul`
             margin-top: 10px;
         }
     }
-`
+`;
 
 export const StatName = styled.span`
     flex: 1;
@@ -299,7 +299,7 @@ export const StatName = styled.span`
     @media (max-width: 800px) {
         font-size: 14px;
     }
-`
+`;
 
 export const StatBarContainer = styled.div`
     position: relative;
@@ -316,7 +316,7 @@ export const StatBarContainer = styled.div`
     @media (max-width: 800px) {
         height: 17px;
     }
-`
+`;
 
 export const StatBar = styled.div`
     height: 100%;
@@ -324,7 +324,7 @@ export const StatBar = styled.div`
     width: ${({ width }) => width}%;
     background-color: ${({ backgroundcolor }) => backgroundcolor};
     transition: width 0.3s ease-in-out;
-`
+`;
 
 export const StatValue = styled.span`
     position: absolute;
@@ -339,7 +339,7 @@ export const StatValue = styled.span`
         font-size: 12px;
         left: 5px;
     }
-`
+`;
 
 export const MovesUl = styled.ul`
     max-height: 290px;
@@ -376,21 +376,21 @@ export const MovesUl = styled.ul`
     @media (max-width: 525px) {
         grid-template-columns: repeat(3, 1fr);
     }
-`
+`;
 
 export const MoveLi = styled.li`
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: ${({ backgroundcolor }) => backgroundcolor};         
+    background-color: ${({ backgroundcolor }) => backgroundcolor};
     padding: 5px;
     border-radius: 5px;
     max-width: 115px;
-    
+
     span {
         color: #ffff;
-        font-size: 14px;    
+        font-size: 14px;
         font-weight: 500;
 
         @media (max-width: 1750px) {
@@ -400,4 +400,4 @@ export const MoveLi = styled.li`
         @media (max-width: 800px) {
         }
     }
-`
+`;

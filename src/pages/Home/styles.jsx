@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const Main = styled.main`
     min-height: 100vh;
@@ -6,7 +6,7 @@ export const Main = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: ${({ backgroundcolor }) => backgroundcolor}; 
+    background-color: ${({ backgroundcolor }) => backgroundcolor};
 
     @media (max-width: 650px) {
         padding: 50px 30px;
@@ -30,55 +30,63 @@ export const SearchContainer = styled.div`
     margin-top: 20px;
     display: flex;
     align-items: center;
-    border: ${({ isfocused }) => isfocused ? `2px solid #E6E6E6` : `2px solid #f2f2f2`};
+    border: ${({ isfocused }) =>
+        isfocused ? `2px solid #E6E6E6` : `2px solid #f2f2f2`};
     border-radius: 10px;
 `;
 
 export const Pokemons = styled.ul`
     width: 100%;
-    ${({ isloading, nopokemonsfound }) => isloading || nopokemonsfound ? css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 60vh;  
-    ` : css`
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 60px;
-        margin: 70px 0 50px 0;
+    ${({ isloading, nopokemonsfound }) =>
+        isloading || nopokemonsfound
+            ? css`
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 60vh;
+              `
+            : css`
+                  width: 100%;
+                  display: grid;
+                  grid-template-columns: repeat(6, 1fr);
+                  gap: 60px;
+                  margin: 70px 0 50px 0;
 
-        @media (max-width: 1750px) {
-            grid-template-columns: repeat(4, 1fr);
-        }
+                  @media (max-width: 1750px) {
+                      grid-template-columns: repeat(4, 1fr);
+                  }
 
-        @media (max-width: 1245px) {
-            grid-template-columns: repeat(3, 1fr);
-        }
+                  @media (max-width: 1245px) {
+                      grid-template-columns: repeat(3, 1fr);
+                  }
 
-        @media (max-width: 960px) {
-            grid-template-columns: repeat(2, 1fr);
-        }
+                  @media (max-width: 960px) {
+                      grid-template-columns: repeat(2, 1fr);
+                  }
 
-        @media (max-width: 670px) {
-            column-gap: 20px;
-        }
+                  @media (max-width: 670px) {
+                      column-gap: 20px;
+                  }
 
-        @media (max-width: 385px) {
-            grid-template-columns: repeat(1, 1fr);
-        }
-    `}
+                  @media (max-width: 385px) {
+                      grid-template-columns: repeat(1, 1fr);
+                  }
+              `}
 `;
 
 export const Loading = styled.img`
     height: 60px;
-    animation: spin 2.5s linear infinite; 
+    animation: spin 2.5s linear infinite;
     margin: auto;
     filter: ${({ filter }) => filter};
 
     @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 `;
 
@@ -86,10 +94,10 @@ export const NoPokemonsFound = styled.span`
     color: ${({ color }) => color};
     font-size: 20px;
     font-weight: 500;
-`
+`;
 
-export const LoadMorePkmButton = styled.button`   
-    background-color: #1E90FF;
+export const LoadMorePkmButton = styled.button`
+    background-color: #1e90ff;
     color: #ffff;
     border: none;
     border-radius: 5px;

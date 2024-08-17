@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
 export const themes = {
     light: {
@@ -7,7 +7,7 @@ export const themes = {
         description: '#8F9396',
         buttonColor: '#ffffff',
         buttonBackground: '#242424',
-        loadingPokeball: 'invert(1) grayscale(1)'
+        loadingPokeball: 'invert(1) grayscale(1)',
     },
     dark: {
         color: '#eeeeee',
@@ -15,18 +15,18 @@ export const themes = {
         description: '#B0B0B0',
         buttonColor: '#242424',
         buttonBackground: '#ffffff',
-        loadingPokeball: 'none'
-    }
-}
+        loadingPokeball: 'none',
+    },
+};
 
-export const ThemeContext = createContext({})
+export const ThemeContext = createContext({});
 
 export const ThemeProvider = (props) => {
-    const [ theme, setTheme ] = useState(themes.light)
+    const [theme, setTheme] = useState(themes.light);
 
-    return ( 
-        <ThemeContext.Provider value={{theme, setTheme}}>
+    return (
+        <ThemeContext.Provider value={{ theme, setTheme }}>
             {props.children}
         </ThemeContext.Provider>
-    )
-}
+    );
+};

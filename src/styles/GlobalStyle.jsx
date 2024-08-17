@@ -22,4 +22,4 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     font-family: "Roboto", sans-serif;
   }
-`
+`;

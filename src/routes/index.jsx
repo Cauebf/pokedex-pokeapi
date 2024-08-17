@@ -4,12 +4,12 @@ import { Pokemon } from '../pages/Pokemon/index';
 import { Home } from '../pages/Home/index';
 
 const AppRoutes = () => (
-    <BrowserRouter> 
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/pokemon/:id" element={<Pokemon />} />
-      </Routes>
+    <BrowserRouter>
+        <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/pokemon/:id" element={<Pokemon />} />
+        </Routes>
     </BrowserRouter>
 );
-  
+
 export { AppRoutes };

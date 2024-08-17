@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { IoIosArrowUp } from "react-icons/io";
+import styled from 'styled-components';
+import { IoIosArrowUp } from 'react-icons/io';
 
 export const Button = styled.button`
     position: fixed;
@@ -10,7 +10,7 @@ export const Button = styled.button`
     bottom: 20px;
     border: none;
     border-radius: 16px;
-    background-color: ${({ backgroundcolor }) => backgroundcolor}; 
+    background-color: ${({ backgroundcolor }) => backgroundcolor};
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
@@ -18,8 +18,8 @@ export const Button = styled.button`
     &:hover {
         transform: translateY(-2px);
     }
-`
+`;
 
 export const ArrowUpIcon = styled(IoIosArrowUp)`
-    color: ${({ color }) => color}; 
+    color: ${({ color }) => color};
 `;

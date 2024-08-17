@@ -1,4 +1,4 @@
-import { Input } from "./styles";
+import { Input } from './styles';
 
 const InputSearch = ({ setPokemonSearched, setFocus, inputRef }) => {
     return (

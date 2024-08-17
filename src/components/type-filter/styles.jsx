@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const FilterButton = styled.button`
     width: 60px;
@@ -7,7 +7,7 @@ export const FilterButton = styled.button`
     border-radius: 10px;
     background-color: #f2f2f2;
     cursor: pointer;
-    transition: 0.1s;  
+    transition: 0.1s;
 
     &:hover {
         background-color: rgb(116, 116, 118, 0.1);
@@ -47,7 +47,7 @@ export const TypeUl = styled.ul`
 `;
 
 export const TypeButton = styled.button`
-    background-color: ${({ color }) => color}; 
+    background-color: ${({ color }) => color};
     width: 100%;
     height: 100%;
     padding: 5px;
@@ -57,10 +57,10 @@ export const TypeButton = styled.button`
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: 0.3s;    
+    transition: 0.3s;
 
     &:hover {
-       opacity: 0.8;
+        opacity: 0.8;
     }
 
     img {
@@ -74,4 +74,4 @@ export const TypeButton = styled.button`
         margin-left: 5px;
         text-transform: capitalize;
     }
-`
+`;

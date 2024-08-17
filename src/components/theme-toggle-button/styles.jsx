@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ToggleContainer = styled.div`
     position: absolute;
@@ -15,7 +15,7 @@ export const ToggleContainer = styled.div`
         height: 0;
         visibility: hidden;
         transition: 0.3s;
-    }   
+    }
 `;
 
 export const Label = styled.label`
@@ -28,7 +28,7 @@ export const Label = styled.label`
     cursor: pointer;
 
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0.1em;
         left: 0.1em;
@@ -64,4 +64,4 @@ export const Label = styled.label`
         left: 0.2em;
         right: auto;
     }
-`
+`;
