@@ -1,0 +1,13 @@
+{
+  "results": [
+    {
+      "name": "beedrill",
+      "url": "https://pokeapi.co/api/v2/pokemon/15/"
+    },
+    {
+      "name": "pidgey",
+      "url": "https://pokeapi.co/api/v2/pokemon/16/"
+    }
+  ],
+  "next": "https://pokeapi.co/api/v2/pokemon?offset=24&limit=12"
+}

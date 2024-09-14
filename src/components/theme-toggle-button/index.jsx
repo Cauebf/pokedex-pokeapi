@@ -18,7 +18,7 @@ const ThemeTogglerButton = () => {
     };
 
     return (
-        <ToggleContainer>
+        <ToggleContainer data-test="theme-toggler">
             <input
                 type="checkbox"
                 id="darkmode-toggle"

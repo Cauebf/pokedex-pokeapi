@@ -11,6 +11,7 @@
   - [💻 Technologies Used](#-technologies-used)
   - [🗝️ Key Takeaways](#️-key-takeaways)
   - [🚀 How to Run the Project](#-how-to-run-the-project)
+  - [🧪 Running Cypress Tests](#-running-cypress-tests)
   - [🖼️ Project Screenshots](#️-project-screenshots)
     - [Desktop Screenshots:](#desktop-screenshots)
     - [Mobile Screenshots:](#mobile-screenshots)
@@ -29,6 +30,7 @@ This application was developed to provide a Pokédex, allowing users to search f
 - Display Pokémon details, including abilities, moves, stats, and descriptions.
 - Toggle between light and dark themes.
 - Easy navigation between the list of Pokémon and the detail page of a specific Pokémon.
+- End-to-end testing using Cypress.
 
 ## 💻 Technologies Used
 
@@ -39,6 +41,7 @@ This application was developed to provide a Pokédex, allowing users to search f
 - [Context API](https://reactjs.org/docs/context.html): For managing the global state of the application.
 - [React Icons](https://react-icons.github.io/react-icons/): For including popular icons in React projects.
 - [PokéAPI](https://pokeapi.co/): For fetching detailed Pokémon data.
+- [Cypress](https://www.cypress.io): For end-to-end testing to ensure the application works as expected.
 
 These tools were chosen for their popularity, flexibility, and robust support for developing modern, responsive applications.
 
@@ -48,6 +51,7 @@ These tools were chosen for their popularity, flexibility, and robust support fo
 2. **API Integration**: Leveraging external APIs to provide real-time data and enhance the application's functionality.
 3. **User Experience**: Focusing on a smooth and intuitive user experience with theme toggles and easy navigation.
 4. **Component-Based Architecture**: Building the application with reusable and maintainable components.
+5. **End-to-End Testing**: Implementing automated tests with Cypress to verify the core functionalities of the application.
 
 ## 🚀 How to Run the Project
 
@@ -62,6 +66,22 @@ After cloning, downloading or forking, follow these steps:
     ```bash
     npm run dev
     ```
+
+## 🧪 Running Cypress Tests
+
+To ensure the application is working correctly, run the Cypress tests as follows:
+
+1. **Open Cypress Test Runner**:
+    ```bash
+    npx cypress open
+    ```
+    This will open the Cypress UI where you can run individual tests or all of them.
+
+2. **Start the application**:
+    ```bash
+    npx cypress run
+    ```
+    This runs the tests in a headless mode, and the results will be displayed in the terminal.
 
 ## 🖼️ Project Screenshots
 

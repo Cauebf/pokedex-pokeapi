@@ -34,6 +34,7 @@ const TypeFilter = ({
         <>
             <FilterButton
                 ref={filterButtonRef}
+                data-test="filter-button"
                 onClick={() => setShowTypeList(!showTypeList)}
             >
                 <img src="/svg/filter.svg" alt="Filter icon" />
@@ -45,6 +46,7 @@ const TypeFilter = ({
                         <li key={index}>
                             <TypeButton
                                 color={type.color}
+                                data-test={`type-button-${type.name}`}
                                 onClick={() => {
                                     filteredType !== type.name
                                         ? setFilteredType(type.name)

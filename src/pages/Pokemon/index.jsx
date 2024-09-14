@@ -143,7 +143,7 @@ const Pokemon = () => {
             }
         >
             <Link to="/">
-                <ArrowLeftIcon size={50} />
+                <ArrowLeftIcon size={50} data-test="back-button" />
             </Link>
 
             <PokeInfoContainer backgroundcolor={theme.background}>
@@ -152,8 +152,8 @@ const Pokemon = () => {
                     alt={pokemon.name}
                     rendering={sprite.rendering}
                 />
-                <PokemonID color={theme.description}>#{pokemon.id}</PokemonID>
-                <PokemonName color={theme.color}>{pokemon.name}</PokemonName>
+                <PokemonID color={theme.description} data-test="pokemon-id">#{pokemon.id}</PokemonID>
+                <PokemonName color={theme.color} data-test="pokemon-name">{pokemon.name}</PokemonName>
 
                 <TypeUl>
                     {pokemon.types.map((pokemonType, index) => (
@@ -162,6 +162,7 @@ const Pokemon = () => {
                             type={types.find(
                                 (t) => t.name === pokemonType.type.name
                             )}
+                            data-test={'pokemon-type'}
                         >
                             <img
                                 src={
@@ -179,7 +180,7 @@ const Pokemon = () => {
                 <PokemonEntryTitle color={theme.color}>
                     Pokédex Entry
                 </PokemonEntryTitle>
-                <PokemonEntryText color={theme.description}>
+                <PokemonEntryText color={theme.description} data-test="pokedex-entry">
                     {species.entry}
                 </PokemonEntryText>
 
@@ -195,7 +196,7 @@ const Pokemon = () => {
                             Pokédex Data
                         </DataTitle>
 
-                        <DataUl>
+                        <DataUl data-test="pokemon-data">
                             <li>
                                 <DataSubTitle color={theme.color}>
                                     Species
@@ -244,7 +245,7 @@ const Pokemon = () => {
 
                         <DataUl>
                             {abilities.map((ability, index) => (
-                                <li key={index}>
+                                <li key={index} data-test="pokemon-ability">
                                     <DataSubTitle color={theme.color}>
                                         {ability.name}{' '}
                                         <HiddenAbility
@@ -275,7 +276,7 @@ const Pokemon = () => {
 
                         <StatsUl>
                             {stats.map((stat, index) => (
-                                <li key={index}>
+                                <li key={index} data-test="pokemon-stat">
                                     <StatName color={theme.description}>
                                         {stat.name}
                                     </StatName>
@@ -317,6 +318,7 @@ const Pokemon = () => {
                                         types.find((t) => t.name === move.type)
                                             .color
                                     }
+                                    data-test="pokemon-move"
                                 >
                                     <span>{move.name}</span>
                                 </MoveLi>

@@ -20,6 +20,7 @@ import ThemeTogglerButton from '../../components/theme-toggle-button';
 const Home = () => {
     const { theme } = useContext(ThemeContext);
     const inputRef = useRef(null);
+    const debounceTimeoutRef = useRef(null);
     const [pokemons, setPokemons] = useState([]);
     const [allPokemons, setAllPokemons] = useState([]);
     const [pokemonsUrl, setPokemonsUrl] = useState('');
@@ -35,21 +36,23 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        pokemonSearched === ''
-            ? resetSearch()
-            : pokemonSearched.length >= 2 && handleInputChange();
+        debounceTimeoutRef.current && clearTimeout(debounceTimeoutRef.current);
+
+        debounceTimeoutRef.current = setTimeout(() => {
+            if (pokemonSearched === '') {
+                resetSearch();
+            } else if (pokemonSearched.length >= 2) {
+                fetchAllPokemons(true);
+            }
+        }, 500);
+
+        return () => {
+            debounceTimeoutRef.current && clearTimeout(debounceTimeoutRef.current);
+        };
     }, [pokemonSearched]);
 
     useEffect(() => {
-        if (isInitialFetchDone && pokemonSearched.length >= 2) {
-            handleInputChange();
-        } else if (isInitialFetchDone) {
-            handlePokemonTypeFilter();
-        }
-    }, [isInitialFetchDone]);
-
-    useEffect(() => {
-        filteredType && handlePokemonTypeFilter();
+        filteredType && fetchAllPokemons(false);
     }, [filteredType]);
 
     useEffect(() => {
@@ -87,38 +90,45 @@ const Home = () => {
         await setDetailedPokemons(data.results, data.next);
     };
 
-    const fetchAllPokemons = async () => {
+    const fetchAllPokemons = async (isSearching) => {
         if (!isInitialFetchDone) {
             setIsLoading(true);
+            setIsInitialFetchDone(true);
+
             const data = await getPokemons(`${baseUrl}?offset=0&limit=10000`);
             const detailedPokemons = await Promise.all(
                 data.results.map((pokemon) => getDetailedPokemon(pokemon.url))
             );
 
+            isSearching
+                ? handlePokemonSearched(detailedPokemons)
+                : handlePokemonTypeFilter(detailedPokemons);
             setAllPokemons(detailedPokemons);
-            setIsInitialFetchDone(true);
-            setIsLoading(false);
+        } else {
+            isSearching
+                ? handlePokemonSearched(allPokemons)
+                : handlePokemonTypeFilter(allPokemons);
         }
     };
 
-    const handleInputChange = async () => {
-        await fetchAllPokemons();
-        const filteredPokemons = allPokemons.filter((pokemon) =>
+    const handlePokemonSearched = (pokemons) => {
+        const filteredPokemons = pokemons.filter((pokemon) =>
             pokemon.name.includes(pokemonSearched.toLowerCase())
         );
 
-        !isLoading && setPokemons(filteredPokemons);
+        setPokemons(filteredPokemons);
+        setIsLoading(false);
     };
 
-    const handlePokemonTypeFilter = async () => {
-        await fetchAllPokemons();
-        const filteredPokemons = allPokemons.filter((pokemon) =>
+    const handlePokemonTypeFilter = (pokemons) => {
+        const filteredPokemons = pokemons.filter((pokemon) =>
             pokemon.types.some(
                 (pokemonType) => pokemonType.type.name === filteredType
             )
         );
 
-        !isLoading && setPokemons(filteredPokemons);
+        setPokemons(filteredPokemons);
+        setIsLoading(false);
     };
 
     const resetSearch = () => {
@@ -128,13 +138,14 @@ const Home = () => {
 
     return (
         <>
-            <Main backgroundcolor={theme.background}>
+            <Main backgroundcolor={theme.background} data-test="home-main">
                 <H1
                     color={theme.color}
                     onClick={() => {
                         resetSearch();
                         inputRef.current.value = '';
                     }}
+                    data-test="home-title"
                 >
                     Pokédex
                 </H1>
@@ -176,7 +187,10 @@ const Home = () => {
                         ))
                     ) : (
                         showNoPokemonsMessage && (
-                            <NoPokemonsFound color={theme.color}>
+                            <NoPokemonsFound
+                                color={theme.color}
+                                data-test="no-pokemons-found"
+                            >
                                 No pokémons found 🧐
                             </NoPokemonsFound>
                         )
@@ -186,7 +200,10 @@ const Home = () => {
                 {inputRef.current !== null &&
                     inputRef.current.value.length < 1 &&
                     filteredType === '' && (
-                        <LoadMorePkmButton onClick={() => loadMorePokemons()}>
+                        <LoadMorePkmButton
+                            data-test="load-more-button"
+                            onClick={() => loadMorePokemons()}
+                        >
                             Load More Pokémons
                         </LoadMorePkmButton>
                     )}

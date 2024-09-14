@@ -19,11 +19,12 @@ export const ArrowLeftIcon = styled(FaChevronLeft)`
 `;
 
 export const Container = styled.div`
-    height: 100vh;
+    min-height: 100vh;
     background-color: ${({ backgroundcolor }) => backgroundcolor};
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: end;
 `;
 
 export const PokeInfoContainer = styled.div`

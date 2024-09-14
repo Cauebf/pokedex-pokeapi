@@ -21,6 +21,7 @@ const PokemonCard = ({ pokemon, index }) => {
                     .cardColor
             }
             isimageloaded={isImageLoaded ? 'true' : undefined}
+            data-test="pokemon-card"
         >
             <CardLink
                 to={`/pokemon/${pokemon.id}`}

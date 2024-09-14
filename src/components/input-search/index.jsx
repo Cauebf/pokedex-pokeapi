@@ -9,6 +9,7 @@ const InputSearch = ({ setPokemonSearched, setFocus, inputRef }) => {
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
                 ref={inputRef}
+                data-test="input-search"
             />
         </>
     );
